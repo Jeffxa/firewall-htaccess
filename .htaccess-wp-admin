@@ -1,0 +1,31 @@
+###################################
+
+## Developed by Jefferson X. Espinoza
+## 25 september 2022
+## https://jeffersonespinoza.com
+
+###################################
+
+## TODO: Add this file in wp-admin folder
+
+
+## Protect this htaccess file
+
+    <Files ~ “^.*\.([Hh][Tt][Aa])”>
+        Order allow,deny
+        Deny from all
+        Satisfy all
+    </Files>
+
+
+## Deny access at this folder for all
+## Except at yours ips approved
+## TODO: uncoment and add more ips approved
+## Replace xxx.xxx.xxx.xxx for yours ips
+
+#order deny,allow
+    #allow from xxx.xxx.xxx.xxx
+    #allow from xxx.xxx.xxx.xxx
+    #allow from xxx.xxx.xxx.xxx
+    #allow from xxx.xxx.xxx.xxx
+#deny from all

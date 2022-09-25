@@ -1,0 +1,46 @@
+###################
+
+# Developed by Jefferson X. Espinoza
+# 25 september 2022
+# https://jeffersonespinoza.com
+
+###################
+
+## TODO: upload this file in this folders
+## /wp-content/uploads/
+## /wp-includes/
+
+
+## Protect this htaccess
+
+    <files ~ "^.*\.([Hh][Tt][Aa])">
+
+        order allow,deny
+        deny from all
+        satisfy all
+
+    </files>
+
+## Protect this folder
+## TODO: uncoment and replace 
+## for yours ips approved and add more
+
+    <LIMIT GET>
+
+        order deny,allow
+        deny from all
+        # Enabled IP address 1:
+        allow from XXX.XXX.XXX.XXX
+        # Enabled IP address 2:
+        allow from XXX.XXX.XXX.XXX
+
+    </LIMIT>
+
+
+## Disable execution th php file
+
+    <Files *.php>
+
+        deny from all
+
+    </Files>
