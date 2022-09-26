@@ -1,10 +1,11 @@
 ##################
 # Desarrollado por Jefferson Espinoza 
 # 24 de septiembre de 2022
-# Firewall por Jeff Starr
+# Firewall By Jeff Starr
 # 7G FIREWALL v1.5 20211103
 # @ https://perishablepress.com/7g-firewall/
-# Configuaracion para uso general leer y desmacar configuraciones segun sea necesario
+# Settings for general use read and unmark settings as needed
+# This config is for general use
 ##################
 RewriteEngine On
 
@@ -229,16 +230,6 @@ Options +FollowSymLinks
     # php_flag html_errors off
     # php_value docref_root 0
     # php_value docref_ext 0
-
-# Throw a 403 forbidden on common brute force URIs
-# TODO: Uncomment appropriate uris and add more to your liking
-    # RedirectMatch 403 ^/admin$
-    # RedirectMatch 403 ^/administrator$
-    # RedirectMatch 403 ^/login$
-    # RedirectMatch 403 ^/wp-admin$
-    # RedirectMatch 403 ^/wp-login.php$
-    # RedirectMatch 403 ^/install.php$
-    # RedirectMatch 403 ^/viewtopic.php$
     
 # Set compression to reduce bandwith
     SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-gzip dont-vary
@@ -339,6 +330,10 @@ Options +FollowSymLinks
     FileETag None
 # End Turn etags off
 
+## Protect especific routes
+    # RedirectMatch 403 ^/myroute$
+    # RedirectMatch 403 ^/myfiles.php$
+
 # Custom error page
 # TODO: Set path errors pages and uncomment
     #ErrorDocument 500 "Houston, we have a problem."
@@ -394,6 +389,16 @@ Options +FollowSymLinks
 
 # TODO: Uncomment in wordpress installation
 
+# Throw a 403 forbidden on common brute force URIs
+# TODO: Uncomment appropriate uris and add more to your liking
+    # RedirectMatch 403 ^/admin$
+    # RedirectMatch 403 ^/administrator$
+    # RedirectMatch 403 ^/login$
+    # RedirectMatch 403 ^/wp-admin$
+    # RedirectMatch 403 ^/wp-login.php$
+    # RedirectMatch 403 ^/install.php$
+    # RedirectMatch 403 ^/viewtopic.php$
+
 # BEGIN WordPress
 	#<IfModule mod_rewrite.c>
 	#RewriteEngine On
@@ -423,13 +428,6 @@ Options +FollowSymLinks
     #order deny,allow
     #deny from all
     #</Files>
-
-# BEGIN block author scans
-# TODO: uncomment this in wordpress installations
-    #RewriteBase /
-    #RewriteCond %{QUERY_STRING} (author=\d+) [NC]
-    #RewriteRule .* - [F]
-# END block author scans
 
 # Disable track and trace http
     #RewriteEngine on

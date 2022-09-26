@@ -29,3 +29,11 @@
     #allow from xxx.xxx.xxx.xxx
     #allow from xxx.xxx.xxx.xxx
 #deny from all
+
+## Disable execution th php file
+
+    <Files *.php>
+
+        deny from all
+
+    </Files>
