@@ -1,8 +1,6 @@
 # firewall-htaccess
 htaccess with firewall 7G
 
-# Firewall htaccess
-
 Este fire wall funciona desde htacces gracias al firewall de Jeff Starr 7G. Cuenta con unas modificaciones para wordpress que solo hay que descomentar segun sean sus necesidades.
 
 ### Como funcióna ?
